@@ -8,19 +8,19 @@
 
 .card {
     display: grid;
-    width: 375px;
-    height: 26.063rem;
+    min-width: 380px;
+    min-height: 28rem;
     background-color: #F5E7D3;
     padding: 35px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
 }
 
 .estado {
     display: flex;
-    height: 147px;
+    height: 130px;
     grid-template-areas: "sigla" "descricao";
     gap: 20px;
-    background-color: violet;
 }
 
 .sigla {
@@ -45,10 +45,11 @@
 }
 
 .descricao {
+    grid-area: descricao;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    grid-area: descricao;
+    max-width: 200px;
 }
 
 .nome-estado {
@@ -73,12 +74,28 @@
     font-size: 18px;
 }
 
-.cidades {
+.cidade {
     display: grid;
-    flex-wrap: wrap;
 }
 
 .title-cidades {
+    position: relative;
+}
+
+.nome-cidades {
     font-weight: 900;
     position: relative;
+    padding-bottom: 5px;
+}
+
+.colunas {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.coluna-cidades {
+    width: 50%;
+    font-size: 16px;
+    line-height: 22px;
 }
